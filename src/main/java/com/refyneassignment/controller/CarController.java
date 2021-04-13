@@ -22,13 +22,11 @@ public class CarController {
         log.info("Inside saveNewCar method: going to save new car detail");
         return carService.saveNewCar(car);
     }
-
     @GetMapping("/findByCarId/{id}")
     public Car findByCarId(@PathVariable("id")  Long carLNumber){
         log.info("Inside findByCarId : Going to find car for ID={}", carLNumber);
         return carService.findByCarId(carLNumber);
     }
-
     @GetMapping("/searchCarsbyDate/fromDateTime/toDateTime")
     public List<Car> searchCarsbyDate(@PathVariable("fromDateTime") Date fromDateTime, @PathVariable("toDateTime") Date toDateTime){
         log.info("Inside searchCarsbyDate of class CarController ");

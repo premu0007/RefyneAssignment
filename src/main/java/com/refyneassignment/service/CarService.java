@@ -46,24 +46,10 @@ public class CarService {
                     result.add(newList.get(i));
                 }
             }
-
         }catch (Exception e){
             log.info("Error inside searchCarsbyDate: cause={}", e.getMessage());
         }
         return result;
     }
 
-//
-
-
-
-
-
-
-//
-//    public List<Car> searchCarsbyDate(Date fromDateTime, Date toDateTime) {
-//        List<Car> carList= new ArrayList<>();
-//        return carList;
-//
-//    }
 }
