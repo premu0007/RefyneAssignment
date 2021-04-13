@@ -12,7 +12,7 @@ public interface CarRepository extends JpaRepository<Car, Long > {
 
     Car findByCarId(Long carId);
 
-
+//new message
 //    @Query("select * from Car c where c.model='honda'")
 //    List<Car> findAllCarsByModel(String model);
 }
