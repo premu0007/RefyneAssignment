@@ -29,11 +29,11 @@ public class CarController {
         return carService.findByCarId(carLNumber);
     }
 
-//    @GetMapping("/fromDateTime/toDateTime")
-//    public List<Car> searchCarsbyDate(@PathVariable("fromDateTime") Date fromDateTime, @PathVariable("toDateTime") Date toDateTime){
-//        log.info("Inside searchCarsbyDate of class CarController ");
-//        return carService.searchCarsbyDate(fromDateTime,toDateTime);
-//    }
+    @GetMapping("/searchCarsbyDate/fromDateTime/toDateTime")
+    public List<Car> searchCarsbyDate(@PathVariable("fromDateTime") Date fromDateTime, @PathVariable("toDateTime") Date toDateTime){
+        log.info("Inside searchCarsbyDate of class CarController ");
+        return carService.searchCarsbyDate(fromDateTime,toDateTime);
+    }
 
 //    @PostMapping("")
 
@@ -45,8 +45,8 @@ public class CarController {
 //    }
 
         @GetMapping("/delete/{id}")
-    public void deleteCarById(@PathVariable("{id}") Long carId){
-        log.info("Inside updateCar method: going to save new car detail");
+    public void deleteCarById(@PathVariable("id") Long carId){
+        log.info("Inside deleteCarById method: going to delete new car detail");
          carService.deleteCar(carId);
     }
 
@@ -55,4 +55,9 @@ public class CarController {
         log.info("Going to get all cars in Data base");
         return carService.findAllCars();
     }
+//    @GetMapping("/findCarByModel/{model}")
+//    public List<Car> findAllCarsByModel(@PathVariable("model") String model){
+//        log.info("Going to get all cars in Data base by model name ={}", model);
+//        return carService.findAllCarsByModel(model);
+//    }
 }
