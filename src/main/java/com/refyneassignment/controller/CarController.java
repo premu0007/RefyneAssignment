@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/cars")
@@ -34,6 +35,14 @@ public class CarController {
         return carService.searchCarsbyDate(fromDateTime,toDateTime);
     }
 
+    @GetMapping("/calculatePriceByTime/{fromDateTime}/{toDateTime}/{id}")
+    public Long calculatePriceByTime(@PathVariable("fromDateTime") String fromDateTime, @PathVariable("toDateTime") String toDateTime, @PathVariable("id") Long carId){
+        log.info("Inside calculatePriceByTime of class CarController ");
+        return carService.calculatePriceByTime(fromDateTime,toDateTime,carId);
+    }
+
+
+
 //    @PostMapping("")
 
 
@@ -53,6 +62,12 @@ public class CarController {
     public List<Car> findAllCars(){
         log.info("Going to get all cars in Data base");
         return carService.findAllCars();
+    }
+
+    @GetMapping("/books/{fromDateTime}/{toDateTime}/{userId}")
+    public Map<String,String> book(@PathVariable("fromDateTime") String fromDateTime, @PathVariable("toDateTime") String toDateTime, @PathVariable("userId") Long userId){
+        log.info("Going to get all cars in Data base");
+             return carService.book(fromDateTime,toDateTime,userId);
     }
 //    @GetMapping("/findCarByModel/{model}")
 //    public List<Car> findAllCarsByModel(@PathVariable("model") String model){

@@ -13,9 +13,11 @@ public interface UsersRepository extends JpaRepository<Users, Long >{
     Users findByUserId(Long userId);
 
     @Modifying
-    @Query("update Users u set  u.name= ?1 , u.mobileNo= ?2 where  u.userId= ?3")
+    @Query("update  Users u set  u.name= ?1 , u.mobileNo= ?2 where  u.userId= ?3")
     Users updateById(String name, Long mobileNo, Long userId);
 }
+
+
 
 
 

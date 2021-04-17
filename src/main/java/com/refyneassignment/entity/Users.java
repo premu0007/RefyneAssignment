@@ -20,6 +20,7 @@ public class Users {
     @Column(unique = true)
     private String name;
     private Long mobileNo;
+
 //    private Car cars;
 
 

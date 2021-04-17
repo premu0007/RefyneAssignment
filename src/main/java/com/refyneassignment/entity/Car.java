@@ -22,9 +22,11 @@ public class Car{
 
     private String model;
     private String manufacturer;
-    private Integer basePrice;
-    private Integer pricePerHour;
-    private Integer securityDeposit;
+    private Long basePrice;
+    private Long pricePerHour;
+    private Long securityDeposit;
     private Date toDateTime;
     private Date fromDateTime;
+
+    private boolean  isBooked;
 }
