@@ -13,4 +13,7 @@ public interface CarUserTableRepository extends JpaRepository<CarUserTable,Long>
 
     @Query("SELECT c from CarUserTable c where c.carId= ?1")
     List<CarUserTable> findAllByCarId(Long carId);
+
+    @Query("SELECT c from CarUserTable c where c.userId= ?1")
+    List<CarUserTable> findCarListByUserId(Long userId);
 }

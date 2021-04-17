@@ -18,4 +18,9 @@ public class CarUserService {
         log.info("Going to get all users detail by car id={}", carId);
        return  carUserTableRepository.findAllByCarId(carId);
     }
+
+    public List<CarUserTable> findCarListByUserId(Long userId) {
+        log.info("Going to get all users detail by car id={}", userId);
+        return  carUserTableRepository.findCarListByUserId(userId);
+    }
 }

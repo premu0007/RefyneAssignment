@@ -20,4 +20,9 @@ public class CarUserController {
     public List<CarUserTable> findUsersListByCarId(@PathVariable("carId") Long carId){
         return service.findUsersListByCarId(carId);
     }
+
+    @GetMapping("/findCarListByUserId/{userId}")
+    public List<CarUserTable> findCarListByUserId(@PathVariable("userId") Long userId){
+        return service.findCarListByUserId(userId);
+    }
 }
